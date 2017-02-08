@@ -78,9 +78,9 @@ class Trading {
             // 更新时间价格序列
             //  本次tick价格 = (买1+卖1)*0.35 + (买2+卖2) * 0.10 + (买3+卖3)*0.05
             prices = prices[1 .. -1] + [(
-                    (orderBook.bids[0].limitPrice + orderBook.asks[0].limitPrice) / 2 + 0.7 +
-                    (orderBook.bids[1].limitPrice + orderBook.asks[1].limitPrice) / 2 + 0.2 +
-                    (orderBook.bids[2].limitPrice + orderBook.asks[2].limitPrice) / 2 + 0.1)]
+                    (orderBook.bids[0].limitPrice + orderBook.asks[0].limitPrice) / 2 * 0.7 +
+                    (orderBook.bids[1].limitPrice + orderBook.asks[1].limitPrice) / 2 * 0.2 +
+                    (orderBook.bids[2].limitPrice + orderBook.asks[2].limitPrice) / 2 * 0.1)]
         }
         updateOrderBook()
 
